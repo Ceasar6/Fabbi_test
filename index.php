@@ -46,13 +46,15 @@ for($i = 0; $i<count($arr)-1; $i++)
 }
 echo $min."<br>";
 $index = 0;
-$newArr[$index] = [];
+
 for($i =0; $i < count($arr) -1; $i++)
 {
     if($arr[$i+1] - $arr[$i] == $min)
     {
+        $newArr[$index] = [];
         $newArr[$index][0] = $arr[$i];
         $newArr[$index][1] = $arr[$i+1];
+        $index++;
     }
 }
 for ($i =0; $i< count($newArr); $i++)
