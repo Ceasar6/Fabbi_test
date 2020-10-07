@@ -16,6 +16,16 @@ for($i =0; $i<$n; $i++)
 
 // bài 2 Tìm tổng lớn nhất của 2 phần tử trong mảng số nguyên
 
+function calMax($arr) {
+    sort($arr);
+    $n = count($arr);
+    $result = $arr[$n-1] + $arr[$n-2];
+    return $result;
+}
+
+
+// bài 3 Tìm các cặp giá trị có khoảng cách nhỏ nhất
+
 $arr = []; // mang ban dau
 $newArr = []; // mang chua cac cap so
 $n =10;
@@ -48,9 +58,4 @@ for($i =0; $i < count($arr) -1; $i++)
 for ($i =0; $i< count($newArr); $i++)
 {
     echo implode(' - ', $newArr[$i])."<br>";
-}
-
-
-// bài 3 Tìm các cặp giá trị có khoảng cách nhỏ nhất
-
 }
