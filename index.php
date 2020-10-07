@@ -16,21 +16,41 @@ for($i =0; $i<$n; $i++)
 
 // bài 2 Tìm tổng lớn nhất của 2 phần tử trong mảng số nguyên
 
-function calMax($arr) {
-    sort($arr);
-    $n = count($arr);
-    $result = $arr[$n-1] + $arr[$n-2];
-    return $result;
+$arr = []; // mang ban dau
+$newArr = []; // mang chua cac cap so
+$n =10;
+for($i = 0; $i<$n; $i++)
+{
+    $arr[$i] = rand(0,100);
+}
+echo implode(' - ', $arr)."<br>";
+sort($arr);
+echo implode(' - ', $arr)."<br>";
+$min = $arr[1] - $arr[0];
+for($i = 0; $i<count($arr)-1; $i++)
+{
+    if($arr[$i+1] - $arr[$i] < $min)
+    {
+        $min = $arr[$i+1] - $arr[$i];
+    }
+}
+echo $min."<br>";
+$index = 0;
+$newArr[$index] = [];
+for($i =0; $i < count($arr) -1; $i++)
+{
+    if($arr[$i+1] - $arr[$i] == $min)
+    {
+        $newArr[$index][0] = $arr[$i];
+        $newArr[$index][1] = $arr[$i+1];
+    }
+}
+for ($i =0; $i< count($newArr); $i++)
+{
+    echo implode(' - ', $newArr[$i])."<br>";
 }
 
 
 // bài 3 Tìm các cặp giá trị có khoảng cách nhỏ nhất
-$arr = array([ 1, 5, 4, 7, 9, 0, -10, 13, 93, 14, 15]);
 
-function smallDistance($arr){
-    $arrNew = sort($arr);
-$min = $arrNew[1] - $arrNew[0];
-for ($i =0; $i < count($arrNew); $i++){
-
-}
 }
